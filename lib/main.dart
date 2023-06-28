@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+String sayHello(String name, int age, [String? country])
+=> 'Hello $name, you are $age years old and come from $country';
+
 void main() {
-  late final String name;
-  name = "song";
-  print(name);
+  print(sayHello('nico', 12));
 }
