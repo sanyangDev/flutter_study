@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-String sayHello(String name, int age, [String? country])
-=> 'Hello $name, you are $age years old and come from $country';
+typedef ListOfInt = List<int>;
+
+ListOfInt reverseListOfNumbers(ListOfInt list){
+  var reversed = list.reversed;
+  return reversed.toList();
+}
 
 void main() {
-  print(sayHello('nico', 12));
+  print(reverseListOfNumbers([1,2,3]));
 }
