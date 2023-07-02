@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 typedef ListOfInt = List<int>;
 
-ListOfInt reverseListOfNumbers(ListOfInt list){
-  var reversed = list.reversed;
-  return reversed.toList();
+class Player {
+  final String name = 'seo_nue';
+  int xp = 1500;
+
+  void sayHello(){
+    print("song love $name");
+  }
 }
 
 void main() {
-  print(reverseListOfNumbers([1,2,3]));
+  var player = Player();
+  player.sayHello();
 }
