@@ -4,33 +4,35 @@ typedef ListOfInt = List<int>;
 
 class Player {
   final String name;
-  int xp, age;
+  int xp;
   String team;
 
-  Player({
-    required this.name,
-    required this.xp,
-    required this.age,
-    required this.team,
-});
-
-  Player.createBluePlayer({
-    required String name,
-    required int age,
-}) : this.age = age,
-  this.name = name,
-  this.team = 'blue',
-  this.xp = 0;
+  Player.fromJson(Map<String, dynamic> playerJson) :
+      name = playerJson['name'],
+      xp = playerJson['xp'],
+      team = playerJson['team'];
 
   void sayHello(){
-    print("이름 : $name, 경험치 : $xp, 나이 : $age, 키 : $team");
+    print("이름 : $name, 경험치 : $xp, 팀 : $team");
   }
 }
 
 void main() {
-  var player = Player.createBluePlayer(
-    name : "seo_nue",
-    age : 22,
-  );
-  print(player);
+  var apiData = [
+    {
+      "name" : "seo_nue",
+      "team" : "us",
+      "xp" : 2,
+    },
+    {
+      "name" : "song",
+      "team" : "home",
+      "xp" : 2,
+    },
+  ];
+
+  apiData.forEach((playerJson) {
+    var player = Player.fromJson(playerJson);
+    player.sayHello();
+  });
 }
