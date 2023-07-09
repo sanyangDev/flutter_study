@@ -1,38 +1,29 @@
 import 'package:flutter/material.dart';
 
-typedef ListOfInt = List<int>;
-
-class Player {
-  final String name;
-  int xp;
-  String team;
-
-  Player.fromJson(Map<String, dynamic> playerJson) :
-      name = playerJson['name'],
-      xp = playerJson['xp'],
-      team = playerJson['team'];
-
-  void sayHello(){
-    print("이름 : $name, 경험치 : $xp, 팀 : $team");
-  }
+void main() {
+  Idol blackPink = Idol(
+    '블랙핑크',
+    ['지수', '로제', '제니', '리사'],
+  );
+  print(blackPink.name);
+  print(blackPink.members);
+  blackPink.sayHello();
+  blackPink.introduce();
 }
 
-void main() {
-  var apiData = [
-    {
-      "name" : "seo_nue",
-      "team" : "us",
-      "xp" : 2,
-    },
-    {
-      "name" : "song",
-      "team" : "home",
-      "xp" : 2,
-    },
-  ];
+class Idol {
+  String name;
+  List<String> members;
 
-  apiData.forEach((playerJson) {
-    var player = Player.fromJson(playerJson);
-    player.sayHello();
-  });
+  Idol(String name, List<String> members)
+      : this.name = name,
+        this.members = members;
+
+  void sayHello(){
+    print('안녕 나는 ${this.name}이야.');
+  }
+
+  void introduce(){
+    print('우리 팀은 ${this.members}로 구성되어 있어.');
+  }
 }
