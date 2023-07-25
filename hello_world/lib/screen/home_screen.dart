@@ -8,8 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebView(
-        initialUrl: 'https//blog.codefactory.ai',
-        javascriptMode: JavascriptMode.unrestricted,
+        initialUrl: "https://blog.codefactory.ai/",
       ),
     );
   }
