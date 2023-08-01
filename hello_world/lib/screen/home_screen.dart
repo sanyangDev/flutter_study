@@ -1,42 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-final homeUrl = Uri.parse('https://blog.codefactory.ai/');
 
 class HomeScreen extends StatelessWidget {
-  WebViewController controller = WebViewController()
-  ..setJavaScriptMode(JavaScriptMode.unrestricted)
-  ..loadRequest(homeUrl);
+  final Color color;
 
-  HomeScreen({super.key});
+  const HomeScreen({
+    required this.color,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Text('Ormm'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                controller.loadRequest(homeUrl);
-              },
-              icon: Icon(
-                Icons.home,
-              ))
-        ],
-      ),
-      body: WebViewWidget(
-        controller: controller,
-      )
-      // WebView(
-      //   onWebViewCreated: (WebViewController controller) {
-      //     this.controller = controller;
-      //   },
-      //   initialUrl: homeUrl,
-      //   javascriptMode: JavascriptMode.unrestricted,
-      // ),
+    return Container(
+      width: 50.0,
+      height: 50.0,
+      color: color,
     );
   }
 }
