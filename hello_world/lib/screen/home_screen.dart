@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
-  final Color color;
-  const HomeScreen({
-    required this.color,
-    Key? key,
-}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -15,10 +10,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 50.0,
-        height: 50.0,
-        color: widget.color,
-    );
+    return const Placeholder();
   }
 }
