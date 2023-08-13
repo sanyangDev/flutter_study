@@ -11,22 +11,57 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-      children: [
-          Text('U&I'),
-          Text('우리 처음 만난 날'),
-          Text('2022.07.12'),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.favorite,
-              ),
+        backgroundColor: Colors.pink[100], // 100 ~ 900까지로 색상 톤 정함.
+        body: SafeArea(
+          child: Container(
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            child: Column(
+              children: [
+                Text(
+                  'U&I',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'parisienne',
+                    fontSize: 80.0,
+                  ),
+                ),
+                Text(
+                  '우리 처음 만난 날',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'sunflower',
+                    fontSize: 30.0,
+                  ),
+                ),
+                Text(
+                  '2022.07.12',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'sunflower',
+                    fontSize: 20.0,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 30.0,
+                  ),
+                ),
+                Text('D+1',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'sunflower',
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.w700,
+                  ),),
+              ],
+            ),
           ),
-          Text('D+1'),
-      ],
-    ),
         ));
   }
 }
