@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Text(
-                  '2022.07.12',
+                  '2023.08.12',
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'sunflower',
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(
                     Icons.favorite,
                     color: Colors.white,
-                    size: 30.0,
+                    size: 40.0,
                   ),
                 ),
                 Text('D+1',
